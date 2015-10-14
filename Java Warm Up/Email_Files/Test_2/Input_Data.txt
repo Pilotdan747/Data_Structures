@@ -1,0 +1,8 @@
+John 35 male
+John 28 male
+Megan 55 female
+Jim 18 male
+Sammy 25 female
+Sam 73 male
+Gordon 42 male
+John 28 male
