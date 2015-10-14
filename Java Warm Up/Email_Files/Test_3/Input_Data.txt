@@ -1,8 +1,0 @@
-A 20 male
-B 23 male
-C 32 female
-B 98392 male
-A 203 female
-A 0 male
-#A 10 male
-A 20 female
