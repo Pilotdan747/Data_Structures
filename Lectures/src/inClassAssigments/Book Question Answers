@@ -1,0 +1,9 @@
+Part a
+    - Added Size variable to the class
+    - Clear() sets size variable to 0
+    - insert increments size variable
+    - size() only returns size variable
+    
+Part d
+    - This change does not directly affect the use of the program but it does make the class more efficient at 
+      determining the size
