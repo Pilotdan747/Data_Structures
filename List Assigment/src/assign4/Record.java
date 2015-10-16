@@ -1,3 +1,4 @@
+package assign4;
 
 public class Record {
 	private String buyOrSell;
