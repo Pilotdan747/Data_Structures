@@ -1,9 +1,4 @@
-//----------------------------------------------------------------------------
-// LLNode.java            by Dale/Joyce/Weems                  Chapter 3
-//
-// Implements <T> nodes for a Linked List.
-//----------------------------------------------------------------------------
-
+package assign4;
 
 public class LLNode<T>
 {

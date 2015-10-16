@@ -1,8 +1,4 @@
-//----------------------------------------------------------------------------
-// DLLNode.java              by Dale/Joyce/Weems                     Chapter 7//
-// Implements <T> nodes for a doubly linked list.
-//----------------------------------------------------------------------------
-
+package assign4;
 
 public class DLLNode<T> extends LLNode<T> 
 {
