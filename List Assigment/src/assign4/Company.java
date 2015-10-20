@@ -27,22 +27,26 @@ public class Company {
 			if (node.getInfo().getBuyOrSell().equals("buy")) {
 				sells.add(node.getInfo());
 			} else {
-				int sellShares = node.getInfo().getShares();
+				int sharesToSell = node.getInfo().getShares();
 
-				DLLNode<Record> sellNode = sells.getFirst();
+				DLLNode<Record> buyNode = sells.getFirst();
+				if (buyNode.getInfo() == null) {
+					throw new RuntimeException();
+				}
 
-				while (sellShares > 0) {
-					int tempShares = sellNode.getInfo().getShares();
+				while (sharesToSell > 0) {
+					int tempShares = buyNode.getInfo().getShares();
 
-					if (sellShares > tempShares) {
-						gains += (sellShares * node.getInfo().getPricePerShare() - sellShares * sellNode.getInfo().getPricePerShare());
-						sellShares -= tempShares;
+					if (sharesToSell > tempShares) {
+						gains += (tempShares * node.getInfo().getPricePerShare() - tempShares * buyNode.getInfo().getPricePerShare());
+						sharesToSell -= tempShares;
+						buyNode = sells.getNext(buyNode);
 						sells.remove();
 					} else {
-						gains += (sellShares * node.getInfo().getPricePerShare() - sellShares * sellNode.getInfo().getPricePerShare());
-						tempShares -= sellShares;
-						sellShares = 0;
-						sellNode.getInfo().setShares(tempShares);
+						gains += (sharesToSell * node.getInfo().getPricePerShare() - sharesToSell * buyNode.getInfo().getPricePerShare());
+						tempShares -= sharesToSell;
+						sharesToSell = 0;
+						buyNode.getInfo().setShares(tempShares);
 					}
 				}
 			}
