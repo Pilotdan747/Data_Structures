@@ -61,4 +61,10 @@ public class Record {
 	public void setPricePerShare(double pricePerShare) {
 		this.pricePerShare = pricePerShare;
 	}
+	
+	public String toString() {
+		String s = buyOrSell + " , Shares: " + shares + ", Price per share: " + pricePerShare;
+		
+		return s;
+	}
 }
