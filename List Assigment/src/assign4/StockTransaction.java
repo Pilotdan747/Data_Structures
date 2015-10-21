@@ -48,6 +48,7 @@ public class StockTransaction {
 				break;
 			}
 
+			int count = 0;
 			DLLNode<Company> node = companies.getFirst();
 			while (node.getInfo() != null) {
 				if (node.getInfo().getTicker().equals(ticker)) {
@@ -56,26 +57,29 @@ public class StockTransaction {
 						gains = node.getInfo().calculateGains();
 					} catch (RuntimeException e) {
 						System.out
-								.println("Sorry, there is an error condition associated with" + node.getInfo().getName()
-										+ "The number of sold shares exceeds the total buy quantity.");
-						return;
+								.println("Sorry, there is an error condition associated with " + node.getInfo().getName()
+										+ " The number of sold shares exceeds the total buy quantity.");
+						break;
 					}
 					if (gains > 0) {
 						System.out.println("Congratulations, your realized gain for " + node.getInfo().getName()
 								+ " is : $" + node.getInfo().calculateGains());
+						break;
 					} else if (gains == 0) {
 						System.out.println("Sorry, no realized gain(or loss) reported for " + node.getInfo().getName());
+						break;
 					} else {
 						System.out.println("Sorry, your realized loss for " + node.getInfo().getName() + " is : $"
 								+ Math.abs(gains));
+						break;
 					}
 				}
 				node = companies.getNext(node);
-
-				if (companies.getNext(node) == null && (node.getInfo().equals(ticker))) {
+				count++;
+				if (count == companies.getSize()) {
 					System.out.println("Sorry, the stock quote does not exist in the system.");
+					break;
 				}
-
 			}
 		}
 		System.out.println("Ending");

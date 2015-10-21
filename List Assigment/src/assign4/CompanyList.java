@@ -2,9 +2,9 @@ package assign4;
 
 public class CompanyList {
 
-	DLLNode<Company> header;
-	DLLNode<Company> trailer;
-	int size;
+	private DLLNode<Company> header;
+	private DLLNode<Company> trailer;
+	private int size;
 	
 	public CompanyList() {
 		header = new DLLNode<Company>(null);
@@ -14,6 +14,10 @@ public class CompanyList {
 		trailer.setBack(header);
 		
 		size = 0;
+	}
+	
+	public int getSize() {
+		return size;
 	}
 	
 	public void addCompany(Company c) {
