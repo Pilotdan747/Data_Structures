@@ -6,7 +6,7 @@ public class TransactionList {
 	DLLNode<Record> trailer;
 	int size;
 	
-	public TransactionList() {
+	public TransactionList() { 									// Initializes Fields
 		header = new DLLNode<Record>(null);
 		trailer = new DLLNode<Record>(null);
 		
@@ -20,13 +20,13 @@ public class TransactionList {
 		
 		DLLNode<Record> node = new DLLNode<Record>(r);
 		
-		if (size == 0) {
+		if (size == 0) {										 // Empty List
 			header.setLink(node);
 			trailer.setBack(node);
 			
 			node.setBack(header);
 			node.setLink(trailer);
-		} else {
+		} else { 												// Non empty list - add to back
 			DLLNode<Record> back = trailer.getBack();
 			
 			node.setBack(back);
@@ -39,18 +39,18 @@ public class TransactionList {
 	}
 	
 	public void remove() {
-		if (size == 0) {
+		if (size == 0) { 										// Cannot remove on empty list
 			throw new QueueUnderflowException();
 		} else if (size == 1){
 			header.setLink(trailer);
-		} else {
+		} else { 												// Remove first element
 			header.setLink(header.getLink().getLink());
 			((DLLNode<Record>) header.getLink()).setBack(header);
 		}
 		size --;
 	}
 	
-	public String toString() {
+	public String toString() { 									// Long string of all records in list
 		String s = " ";
 		DLLNode<Record> node = header;
 		
@@ -68,7 +68,7 @@ public class TransactionList {
 	}
 	
 	public DLLNode<Record> getNext(DLLNode<Record> n) {
-		if ((DLLNode<Record>)n.getLink() == trailer) {
+		if ((DLLNode<Record>)n.getLink() == trailer) { 			// If there is not a next return null
 			return null;
 		}
 		
