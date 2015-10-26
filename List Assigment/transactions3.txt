@@ -1,0 +1,12 @@
+BKS;buy;25;$13
+BKS;buy;5;$15
+BKS;buy;115;$10
+MSFT;buy;75;$55
+MSFT;buy;35;$65
+BKS;sell;25;$17
+BKS;sell;100;$20
+MSFT;sell;100;$75
+MSFT;buy;55;$80
+BKS;buy;50;$16
+MSFT;sell;20;$55
+BKS;sell;130;$17

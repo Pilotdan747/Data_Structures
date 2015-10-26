@@ -1,0 +1,12 @@
+NFLX;buy;25;$450
+NFLX;buy;5;$490
+AMZN;buy;115;$65
+EBAY;buy;75;$150
+ETSY;buy;45;$40
+NFLX;sell;25;$510
+NFLX;sell;3;$420
+AMZN;sell;50;$50
+GKNT;buy;55;$40
+EBAY;buy;50;$50
+ETSY;sell;30;$15
+GKNT;sell;30;$65

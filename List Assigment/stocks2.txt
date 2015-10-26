@@ -1,0 +1,5 @@
+NFLX;Netflix Inc.
+AMZN;Amazon Inc.
+EBAY;Ebay Inc.
+ETSY;Etsy Inc.
+GKNT;Geeknet Inc
