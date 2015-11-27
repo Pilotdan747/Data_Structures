@@ -3,4 +3,3 @@ IBM;International Business Machines Corp.
 KO;The Coca-Cola Company
 FB;Facebook Inc.
 SBUX;Starbucks Corp.
-CRM;salesforce.com, inc.
